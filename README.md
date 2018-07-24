@@ -1,2 +1,0 @@
-# kordrad.github.io
-Portfolio
