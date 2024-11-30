@@ -2,7 +2,13 @@
   "name": "@portfolio/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "nx serve web",
+    "build": "nx build web",
+    "start:build": "node dist/web/analog/server/index.mjs",
+    "*** Other ***": "",
+    "prestart:build": "pnpm run build"
+  },
   "private": true,
   "dependencies": {
     "@analogjs/content": "^1.7.0",
