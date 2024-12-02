@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve web",
     "build": "nx build web",
+    "lint": "nx lint web",
     "start:build": "node dist/web/analog/server/index.mjs",
     "*** Other ***": "",
     "prestart:build": "pnpm run build",
@@ -26,6 +27,7 @@
     "@angular/platform-server": "^18.0.0",
     "@angular/router": "^18.0.0",
     "front-matter": "^4.0.2",
+    "h3": "^1.13.0",
     "marked": "^5.0.2",
     "marked-gfm-heading-id": "^3.1.0",
     "marked-highlight": "^2.0.1",
