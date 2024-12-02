@@ -48,6 +48,8 @@
     "@nx/eslint": "^19.1.0",
     "@nx/vite": "^19.1.0",
     "@nx/workspace": "20.1.4",
+    "angular-eslint": "^19.0.0",
+    "eslint": "^9.15.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.1",
