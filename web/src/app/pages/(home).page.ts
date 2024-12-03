@@ -6,9 +6,6 @@ import { AnalogWelcomeComponent } from './analog-welcome.component';
   selector: 'web-home',
   standalone: true,
   imports: [AnalogWelcomeComponent],
-  template: `
-     <web-analog-welcome/>
-  `,
+  template: ` <web-analog-welcome /> `,
 })
-export default class HomeComponent {
-}
+export default class HomeComponent {}

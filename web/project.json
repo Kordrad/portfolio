@@ -47,11 +47,18 @@
     },
     "test": {
       "executor": "@analogjs/vitest-angular:test",
-      "outputs": [
-        "{projectRoot}/coverage"
-      ]
+      "outputs": ["{projectRoot}/coverage"]
+    },
+    "lint": {
+      "builder": "@angular-eslint/builder:lint",
+      "options": {
+        "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+      }
     }
   },
   "tags": [],
-  "sourceRoot": "./web/src"
+  "sourceRoot": "./web/src",
+  "cli": {
+    "schematicCollections": ["angular-eslint"]
+  }
 }
