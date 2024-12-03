@@ -10,6 +10,7 @@
     "lint:fix": "nx lint web --fix",
     "lint:style": "stylelint **/*.{css,scss}",
     "lint:style:fix": "stylelint **/*.{css,scss} --fix",
+    "test": "nx test web",
     "prestart:prod": "pnpm run build",
     "prepare": "husky"
   },
@@ -41,6 +42,7 @@
   "devDependencies": {
     "@analogjs/platform": "^1.7.0",
     "@analogjs/vite-plugin-angular": "^1.7.0",
+    "@analogjs/vitest-angular": "^1.10.0",
     "@angular-devkit/build-angular": "^18.0.0",
     "@angular/compiler-cli": "^18.0.0",
     "@commitlint/cli": "^19.6.0",
