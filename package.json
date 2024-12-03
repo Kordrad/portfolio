@@ -4,13 +4,13 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve web",
+    "start:prod": "node dist/web/analog/server/index.mjs",
     "build": "nx build web",
     "lint": "nx lint web",
-    "start:build": "node dist/web/analog/server/index.mjs",
-    "*** Other ***": "",
-    "prestart:build": "pnpm run build",
-    "stylelint": "stylelint **/*.{css,scss}",
-    "stylelint:fix": "stylelint **/*.{css,scss} --fix",
+    "lint:fix": "nx lint web --fix",
+    "lint:style": "stylelint **/*.{css,scss}",
+    "lint:style:fix": "stylelint **/*.{css,scss} --fix",
+    "prestart:prod": "pnpm run build",
     "prepare": "husky"
   },
   "private": true,

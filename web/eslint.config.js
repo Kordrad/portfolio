@@ -29,6 +29,6 @@ export default [
     rules: {},
   },
   {
-    // ignores: ['index.html'],
+    ignores: ['index.html'],
   },
 ];

@@ -136,10 +136,10 @@ module.exports = [
       '**/out-tsc',
       '**/testem.log',
       '**/tmp',
-      '**/tmp',
       '**/typings',
       '**/yarn-error.log',
       '**/pnpm-lock.yaml',
+      '**/*timestamp*',
     ],
   },
 ];
