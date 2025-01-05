@@ -1,10 +1,18 @@
+import angular from 'angular-eslint';
+import tsEslint from 'typescript-eslint';
+
 import config from '../eslint.config.js';
 
-export default [
-  ...config,
-
+export default tsEslint.config(
+  config,
   {
-    files: ['*.ts'],
+    files: ['**/*.ts'],
+    extends: [
+      ...tsEslint.configs.recommended,
+      ...tsEslint.configs.stylistic,
+      ...angular.configs.tsRecommended,
+    ],
+    processor: angular.processInlineTemplates,
     rules: {
       '@angular-eslint/directive-selector': [
         'error',
@@ -25,10 +33,14 @@ export default [
     },
   },
   {
-    files: ['*.html'],
+    files: ['**/*.html'],
+    extends: [
+      ...angular.configs.templateRecommended,
+      ...angular.configs.templateAccessibility,
+    ],
     rules: {},
   },
   {
     ignores: ['index.html'],
-  },
-];
+  }
+);
