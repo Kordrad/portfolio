@@ -65,31 +65,6 @@ const eslintPluginUnicornConfig = [
 ];
 
 const angularConfig = [
-  ...angular.configs.tsRecommended,
-  ...angular.configs.templateRecommended,
-  ...angular.configs.templateAccessibility,
-  {
-    files: ['**/*.ts'],
-    processor: angular.processInlineTemplates,
-    rules: {
-      '@angular-eslint/directive-selector': [
-        'error',
-        {
-          type: 'attribute',
-          prefix: 'app',
-          style: 'camelCase',
-        },
-      ],
-      '@angular-eslint/component-selector': [
-        'error',
-        {
-          type: 'element',
-          prefix: 'app',
-          style: 'kebab-case',
-        },
-      ],
-    },
-  },
   {
     files: ['**/*.html', '*.{component,page}.ts'],
     rules: {
@@ -100,7 +75,6 @@ const angularConfig = [
 
 module.exports = [
   { plugins: { '@nx': nxPlugin } },
-
   ...unusedImportsConfig,
   ...simpleImportSortConfig,
   ...eslintPluginPrettierConfig,
