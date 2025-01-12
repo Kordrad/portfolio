@@ -1,1 +1,3 @@
+pnpm run i18n:find
+pnpm run i18n:extract
 nano-staged
