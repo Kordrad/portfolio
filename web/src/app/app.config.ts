@@ -1,15 +1,18 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
 import {
   provideHttpClient,
   withFetch,
   withInterceptors,
 } from '@angular/common/http';
+import {
+  ApplicationConfig,
+  provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideExperimentalZonelessChangeDetection(),
     provideFileRouter(),
     provideClientHydration(),
     provideHttpClient(
