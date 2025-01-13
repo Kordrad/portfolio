@@ -102,8 +102,7 @@ jobs:
             node_modules
             ~/.pnpm-store
           key: ${{ needs.install.outputs.cache-key }}
-      - run: pnpm run i18n:find
-      - run: pnpm run i18n:extract
+      - run: pnpm run i18n:validate
       - uses: actions/upload-artifact@v4
         if: always()
         with:
