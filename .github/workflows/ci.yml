@@ -85,6 +85,31 @@ jobs:
           path: test-report/
           retention-days: ${{ env.RETENTION_DAYS }}
 
+  i18n-validation:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            ~/.pnpm-store
+          key: ${{ needs.install.outputs.cache-key }}
+      - run: pnpm run i18n:validate
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: i18n-validation
+          path: i18n-validation/
+          retention-days: ${{ env.RETENTION_DAYS }}
+
   build:
     needs: [install, lint, test]
     runs-on: ubuntu-latest
