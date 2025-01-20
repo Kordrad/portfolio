@@ -9,8 +9,9 @@
   "bracketSpacing": true,
   "arrowParens": "avoid",
   "trailingComma": "es5",
-  "bracketSameLine": true,
-  "printWidth": 80,
+  "bracketSameLine": false,
+  "htmlWhitespaceSensitivity": "ignore",
+  "printWidth": 120,
   "endOfLine": "auto",
   "attributeGroups": [
     "$ANGULAR_STRUCTURAL_DIRECTIVE",
