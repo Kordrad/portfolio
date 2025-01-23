@@ -1,0 +1,19 @@
+<nav class="nav">
+  <header [class.scrolled]="isScrolled()" class="header">
+    <web-logo
+      [expanded]="true"
+      [subtitle]="'user.position' | transloco"
+      [title]="'user.fullName' | transloco"
+      src="https://github.com/Kordrad.png"
+    />
+  </header>
+  <ul class="group">
+    <li class="group-element">
+      <web-icon icon="academic-cap" />
+      Services
+    </li>
+    <li class="group-element">Articles</li>
+    <li class="group-element">menu3</li>
+    <li class="group-element">menu4</li>
+  </ul>
+</nav>
