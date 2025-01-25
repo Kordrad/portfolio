@@ -14,5 +14,10 @@
       }
     }
   ],
-  "nxCloudId": "674b51daa7a8855e5b1deba3"
+  "nxCloudId": "674b51daa7a8855e5b1deba3",
+  "generators": {
+    "@nx/angular:component": {
+      "style": "css"
+    }
+  }
 }

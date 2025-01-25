@@ -1,0 +1,24 @@
+:host {
+  height: 2.5rem;
+  width: 2.5rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  touch-action: none;
+  pointer-events: none;
+  user-select: none;
+
+  // Text
+  &:not(:has(img)) {
+    background-color: var(--avatar-bg, lightgray);
+    color: var(--avatar-text, darkgray);
+  }
+
+  & > * {
+    height: 100%;
+    width: 100%;
+  }
+}

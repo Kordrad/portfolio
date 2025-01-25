@@ -1,0 +1,19 @@
+// Common
+$border-color: #E4E4E7;
+$text-color: #333;
+
+// Sidebar
+$sidebar-background: #fafafa;
+
+// global
+
+
+
+:root {
+  // common
+  --border-color: #{$border-color};
+  --text-color: #{$text-color};
+
+  // sidebar
+  --sidebar-background: #{$sidebar-background};
+}
