@@ -48,19 +48,12 @@
         "test": {
           "executor": "@analogjs/vitest-angular:test",
           "outputs": ["{projectRoot}/coverage"]
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
-          }
         }
       }
     }
   },
   "cli": {
-    "analytics": false,
-    "schematicCollections": ["angular-eslint"]
+    "analytics": false
   },
   "schematics": {
     "@schematics/angular:component": {
