@@ -7,18 +7,14 @@ export default tsEslint.config(
   config,
   {
     files: ['**/*.ts'],
-    extends: [
-      ...tsEslint.configs.recommended,
-      ...tsEslint.configs.stylistic,
-      ...angular.configs.tsRecommended,
-    ],
+    extends: [...tsEslint.configs.recommended, ...tsEslint.configs.stylistic, ...angular.configs.tsRecommended],
     processor: angular.processInlineTemplates,
     rules: {
       '@angular-eslint/directive-selector': [
         'error',
         {
           type: 'attribute',
-          prefix: 'Web',
+          prefix: 'App',
           style: 'camelCase',
         },
       ],
@@ -26,7 +22,7 @@ export default tsEslint.config(
         'error',
         {
           type: 'element',
-          prefix: 'web',
+          prefix: 'app',
           style: 'kebab-case',
         },
       ],
@@ -34,13 +30,13 @@ export default tsEslint.config(
   },
   {
     files: ['**/*.html'],
-    extends: [
-      ...angular.configs.templateRecommended,
-      ...angular.configs.templateAccessibility,
-    ],
+    extends: [...angular.configs.templateRecommended, ...angular.configs.templateAccessibility],
     rules: {},
   },
   {
-    ignores: ['index.html'],
+    files: ['**/*.html', '*.{component,page}.ts'],
+    rules: {
+      '@angular-eslint/template/prefer-self-closing-tags': ['error'],
+    },
   }
 );

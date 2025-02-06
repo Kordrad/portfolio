@@ -1,31 +1,22 @@
-import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
-import {
-  provideHttpClient,
-  withFetch,
-  withInterceptors,
-} from '@angular/common/http';
-import {
-  ApplicationConfig,
-  isDevMode,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { ApplicationConfig, isDevMode, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { provideClientHydration } from '@angular/platform-browser';
+import { provideFileRouter, requestContextInterceptor } from '@analogjs/router';
+import { provideContent, withMarkdownRenderer } from '@analogjs/content';
+import { withShikiHighlighter } from '@analogjs/content/shiki-highlighter';
 import { provideTransloco } from '@jsverse/transloco';
-
 import { TranslocoHttpLoader } from './transloco-loader';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideExperimentalZonelessChangeDetection(),
     provideFileRouter(),
+    provideHttpClient(withFetch(), withInterceptors([requestContextInterceptor])),
     provideClientHydration(),
-    provideHttpClient(
-      withFetch(),
-      withInterceptors([requestContextInterceptor])
-    ),
+    provideContent(withMarkdownRenderer(), withShikiHighlighter()),
     provideTransloco({
       config: {
-        availableLangs: ['en', 'pl'],
+        availableLangs: ['en'],
         defaultLang: 'en',
         // Remove this option if your application doesn't support changing language in runtime.
         reRenderOnLangChange: true,

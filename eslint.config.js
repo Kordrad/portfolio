@@ -3,9 +3,6 @@ const unusedImports = require('eslint-plugin-unused-imports');
 const simpleImportSort = require('eslint-plugin-simple-import-sort');
 const eslintPluginUnicorn = require('eslint-plugin-unicorn');
 
-const nxPlugin = require('@nx/eslint');
-const angular = require('angular-eslint');
-
 const unusedImportsConfig = [
   {
     plugins: {
@@ -64,22 +61,11 @@ const eslintPluginUnicornConfig = [
   },
 ];
 
-const angularConfig = [
-  {
-    files: ['**/*.html', '*.{component,page}.ts'],
-    rules: {
-      '@angular-eslint/template/prefer-self-closing-tags': ['error'],
-    },
-  },
-];
-
 module.exports = [
-  { plugins: { '@nx': nxPlugin } },
   ...unusedImportsConfig,
   ...simpleImportSortConfig,
   ...eslintPluginPrettierConfig,
   ...eslintPluginUnicornConfig,
-  ...angularConfig,
   {
     ignores: [
       '**/!.vscode/extensions.json',
@@ -94,7 +80,6 @@ module.exports = [
       '**/.classpath',
       '**/.history/*',
       '**/.idea',
-      '**/.nx',
       '**/.project',
       '**/.sass-cache/',
       '**/.settings/',
