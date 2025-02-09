@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - id: cache-key
-        run: echo "::set-output name=cache-key::$(echo ${{ runner.os }}-node-${{ env.NODE_VERSION }}-npm-cache-$(sha256sum package-lock.json | cut -d' ' -f1))"
+        run: echo "::set-output name=cache-key::$(echo ${{ runner.os }}-node-${{ env.NODE_VERSION }}-npm-cache-$(sha256sum pnpm-lock.yaml | cut -d' ' -f1))"
       - uses: actions/cache@v4
         id: pnpm-cache
         with:
