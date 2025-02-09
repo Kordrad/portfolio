@@ -11,11 +11,7 @@ import PostAttributes from '../../post-attributes';
   template: `
     @if (post$ | async; as post) {
       <article>
-        <<<<<<< ours
-        <img [src]="post.attributes.coverImage" class="post__image" />
-        =======
         <img [src]="post.attributes.coverImage" alt="photo" class="post__image" />
-        >>>>>>> theirs
         <analog-markdown [content]="post.content" />
       </article>
     }
